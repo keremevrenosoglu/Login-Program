@@ -1,2 +1,2 @@
-# Login-Program
-Login program built using C. Has the user create a username as well as a password that must meet certain requirements. Generates an alternate default password at the end.
+# LoginProgram
+The user is asked to enter a username and password. This password is then checked against a set of restrictions with the isStrongPassword function. The password has to be at least eight characters with a minimum of one uppercase, one lowercase, and one digit. Additionally, should only be alphanumeric, have a string of four consecutive letters, and cannot contain the entered username. The program continues to ask the user for input until they give a password that is valid. generateDefaultPassword is then ran at the end which creates random strings until it lands on one for which isStrongDefaultPassword returns true (same requirements as before minus the consecutive letters but with a max total length of 15 characters).
