@@ -76,7 +76,7 @@ bool isStrongPassword(const char * username, const char * password) {
 	        currConsec = 0;
 	    }
 	    
-	    /** 
+	/** 
          * Starting from the current index of the password, there is a check 
          * ensure the username is not there in the password. There must be
          * enough characters left after the current index of the password to
@@ -103,7 +103,7 @@ bool isStrongPassword(const char * username, const char * password) {
 	    index++;
 	}
 	
-	/** 
+    /** 
      * If it has passed all checks, the function can return true.
      */
     if (hasUpper && hasLower && hasDigit && maxConsec >= 4) {
@@ -123,7 +123,7 @@ bool isStrongDefaultPassword(const char* username, const char* password) {
 	bool hasDigit = false;
 	bool hasUsername = false;
 	
-	/** 
+    /** 
      * if statement altered to also return false if the length 
      * is greater than 15.
     */
@@ -173,13 +173,13 @@ bool isStrongDefaultPassword(const char* username, const char* password) {
  */
 void generateDefaultPassword(char * default_password, const char * username) {
     do {
-        /** 
+       /** 
         * Length of the password is set to a random number between the minimum 
         * 8 and max 15.
         */
         int randLength = (rand() % (15 - 8 + 1)) + 8;	
         
-        /** 
+       /** 
         * Random char is generated for each index of the password until the
         * length is met. Uses a do-while loop to ensure this value will be
         * a letter or number rather than other non-allowed character before
@@ -198,7 +198,7 @@ void generateDefaultPassword(char * default_password, const char * username) {
 
 int main(void) 
 {
-    /** 
+   /** 
     * Random number generator seeded at the start. Strings declared
     * for the username, user-entered password, and default generated password.
     */
@@ -209,7 +209,7 @@ int main(void)
     char defaultPass[16];
     int counter = 0;
     
-    /** 
+   /** 
     * User is asked to enter a username and password until a password is
     * used that passes isStrongPassword's requirements.
     */
@@ -227,13 +227,13 @@ int main(void)
         }
     } while (!isStrongPassword(user, enteredPass));
     
-    /** 
+   /** 
     * generateDefaultPassword is then called to get a default password
     * that meets the default password checks.
     */
     generateDefaultPassword(defaultPass, user);
     
-    /** 
+   /** 
     * It is printed below, with a counter variable to move from
     * one char to the next.
     */
@@ -246,6 +246,6 @@ int main(void)
     }
     printf("\n");
     
-	return 0;
+    return 0;
 }
 
